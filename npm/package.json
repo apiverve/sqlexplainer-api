@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/sqlexplainer",
+  "version": "1.1.12",
+  "description": "SQL Explainer analyzes SQL queries and provides clear, plain English explanations of what they do. Perfect for learning SQL, code reviews, or documentation.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/sqlexplainer-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "sql", "query", "explain", "analyzer", "database"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/sqlexplainer-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/sqlexplainer?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
