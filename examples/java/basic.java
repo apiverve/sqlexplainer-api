@@ -12,13 +12,8 @@ public class BasicExample {
         SQLExplainerAPIClient client = new SQLExplainerAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;query&quot;, &quot;SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id &#x3D; o.user_id WHERE u.created_at &gt; &#x27;2024-01-01&#x27; GROUP BY u.id HAVING COUNT(o.id) &gt; 5 ORDER BY order_count DESC&quot;);
-        parameters.put(&quot;detail&quot;, &quot;standard&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
