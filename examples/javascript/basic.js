@@ -9,23 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/sqlexplainer';
 
 /**
- * Make a POST request to the SQL Explainer API
+ * Make a GET request to the SQL Explainer API
  */
 async function callSQLExplainerAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;query&quot;: &quot;SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id &#x3D; o.user_id WHERE u.created_at &gt; &#x27;2024-01-01&#x27; GROUP BY u.id HAVING COUNT(o.id) &gt; 5 ORDER BY order_count DESC&quot;,
-    &quot;detail&quot;: &quot;standard&quot;
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
