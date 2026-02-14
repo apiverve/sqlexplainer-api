@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/sqlexplainer";
 
         /// <summary>
-        /// Make a POST request to the SQL Explainer API
+        /// Make a GET request to the SQL Explainer API
         /// </summary>
         static async Task<JsonDocument> CallSQLExplainerAPI()
         {
@@ -29,13 +29,7 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                // Request body
-                var requestBody &#x3D; new { query &#x3D; &quot;SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id &#x3D; o.user_id WHERE u.created_at &gt; &#x27;2024-01-01&#x27; GROUP BY u.id HAVING COUNT(o.id) &gt; 5 ORDER BY order_count DESC&quot;, detail &#x3D; &quot;standard&quot; };
-
-                var jsonContent = JsonSerializer.Serialize(requestBody);
-                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
-
-                var response = await client.PostAsync(API_URL, content);
+                var response = await client.GetAsync(API_URL);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
