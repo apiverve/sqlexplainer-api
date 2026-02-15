@@ -12,14 +12,12 @@ namespace APIVerve.API.SQLExplainer
     {
         /// <summary>
         /// The SQL query to explain
-        /// Example: SELECT * FROM users WHERE age > 18
         /// </summary>
         [JsonProperty("query")]
         public string Query { get; set; }
 
         /// <summary>
         /// Explanation detail level: brief, standard, or detailed
-        /// Example: standard
         /// </summary>
         [JsonProperty("detail")]
         public string Detail { get; set; }
