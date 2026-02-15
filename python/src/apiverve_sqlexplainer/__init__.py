@@ -1,1 +1,3 @@
-from .apiClient import SqlexplainerAPIClient
+from .apiClient import SqlexplainerAPIClient, SqlexplainerAPIClientError
+
+__all__ = ['SqlexplainerAPIClient', 'SqlexplainerAPIClientError']
