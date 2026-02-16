@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:sqlexplainer-api:1.1.13'
+    implementation 'com.github.apiverve:sqlexplainer-api:1.1.14'
 }
 ```
 
@@ -47,8 +47,8 @@ SQLExplainerAPIClient client = new SQLExplainerAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("query", "SELECT * FROM users WHERE age > 18");
-    parameters.put("detail", "brief");
+    parameters.put("query", "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC");
+    parameters.put("detail", "standard");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
