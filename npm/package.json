@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/sqlexplainer",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "SQL Explainer analyzes SQL queries and provides clear, plain English explanations of what they do. Perfect for learning SQL, code reviews, or documentation.",
   "main": "index.js",
   "types": "index.d.ts",
