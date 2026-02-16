@@ -44,7 +44,10 @@ from apiverve_sqlexplainer.apiClient import SqlexplainerAPIClient
 # Initialize the client with your APIVerve API key
 api = SqlexplainerAPIClient("[YOUR_API_KEY]")
 
-query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
 
 try:
     # Make the API call
@@ -82,7 +85,10 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
 ```
 
 ###### Simple Request
@@ -126,7 +132,10 @@ from apiverve_sqlexplainer.apiClient import SqlexplainerAPIClient, SqlexplainerA
 
 api = SqlexplainerAPIClient("[YOUR_API_KEY]")
 
-query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
 
 try:
     result = api.execute(query)
@@ -147,7 +156,10 @@ from apiverve_sqlexplainer.apiClient import SqlexplainerAPIClient, SqlexplainerA
 
 api = SqlexplainerAPIClient("[YOUR_API_KEY]")
 
-query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
 
 try:
     result = api.execute(query)
@@ -181,7 +193,10 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_sqlexplainer.apiClient import SqlexplainerAPIClient, SqlexplainerAPIClientError
 
-query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
 
 # Using context manager ensures proper cleanup
 with SqlexplainerAPIClient("[YOUR_API_KEY]") as api:
@@ -207,7 +222,10 @@ from apiverve_sqlexplainer.apiClient import SqlexplainerAPIClient
 # Enable debug mode
 api = SqlexplainerAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -222,8 +240,12 @@ from apiverve_sqlexplainer.apiClient import SqlexplainerAPIClient
 
 api = SqlexplainerAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC",
+    "detail": "standard"
+}
+
 try:
-    query = { "query": "SELECT u.name, COUNT(o.id) as order_count FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.created_at > '2024-01-01' GROUP BY u.id HAVING COUNT(o.id) > 5 ORDER BY order_count DESC", "detail": "standard" }
     result = api.execute(query)
     print(result)
 finally:
