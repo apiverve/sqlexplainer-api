@@ -4,19 +4,31 @@ declare module '@apiverve/sqlexplainer' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface sqlexplainerResponse {
     status: string;
     error: string | null;
     data: SQLExplainerData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface SQLExplainerData {
-      explanation: string;
-      operation:   string;
-      tables:      string[];
-      complexity:  string;
+      explanation: null | string;
+      operation:   null | string;
+      tables:      (null | string)[];
+      complexity:  null | string;
   }
 
   export default class sqlexplainerWrapper {
