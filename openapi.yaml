@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/sqlexplainer:
     post:
-      summary: Explain SQL Query
+      summary: SQL Explainer
       description: Get a plain English explanation of a SQL query
       operationId: sqlexplainer
       parameters: []

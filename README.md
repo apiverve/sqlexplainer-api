@@ -1,13 +1,13 @@
-# [SQL Explainer API](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+# [SQL Explainer API](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
 SQL Explainer analyzes SQL queries and provides clear, plain English explanations of what they do. Perfect for learning SQL, code reviews, or documentation.
 
 The SQL Explainer API provides a simple, reliable way to integrate sql explainer functionality into your applications. Built for developers who need production-ready sql explainer capabilities without the complexity of building from scratch.
 
-**[View API Details →](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)**
+**[View API Details →](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+[![API Status](https://img.shields.io/badge/Status-Active-green.svg)](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 [![Method](https://img.shields.io/badge/Method-POST-blue.svg)](#)
 [![Platform](https://img.shields.io/badge/Platform-Multi--Platform-orange.svg)](#installation)
 
@@ -169,7 +169,7 @@ go get github.com/apiverve/sqlexplainer-api/go
 
 ## Documentation
 
-- 🏠 **API Home:** [SQL Explainer API](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home:** [SQL Explainer API](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 📚 **API Reference:** [docs.apiverve.com/ref/sqlexplainer](https://docs.apiverve.com/ref/sqlexplainer)
 - 📖 **OpenAPI Spec:** [openapi.yaml](./openapi.yaml)
 - 💡 **Examples:** [examples/](./examples/)
@@ -199,11 +199,34 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the SQL Explainer API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "explanation": "This SQL query retrieves the names of users and the number of orders they have placed. It filters users who were created after January 1, 2024. The query then groups the results by user ID and only includes users who have placed more than 5 orders, finally ordering the results by the order count in descending order.",
+    "operation": "SELECT",
+    "tables": [
+      "users",
+      "orders"
+    ],
+    "complexity": "moderate"
+  }
 }
 ```
 
@@ -211,7 +234,7 @@ All responses are JSON with this structure:
 
 ## Support & Community
 
-- 🏠 **API Home**: [SQL Explainer API](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;readme)
+- 🏠 **API Home**: [SQL Explainer API](https://apiverve.com/marketplace/sqlexplainer?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 - 💬 **Support**: [https://apiverve.com/contact](https://apiverve.com/contact)
 - 🐛 **Issues**: [GitHub Issues](../../issues)
 - 📖 **Documentation**: [https://docs.apiverve.com](https://docs.apiverve.com)
