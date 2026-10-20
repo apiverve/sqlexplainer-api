@@ -30,7 +30,7 @@ class sqlexplainerWrapper {
         this.baseURL = 'https://api.apiverve.com/v1/sqlexplainer';
 
         // Validation rules for parameters (generated from schema)
-        this.validationRules = {"query":{"type":"string","required":true},"detail":{"type":"string","required":false,"default":"brief"}};
+        this.validationRules = {"query":{"type":"string","required":true,"maxLength":50000},"detail":{"type":"string","required":false,"default":"brief"}};
     }
 
     /**
