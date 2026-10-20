@@ -1,6 +1,6 @@
 import re
-from typing import Dict, Optional, Any
-from dataclasses import dataclass, List
+from typing import Dict, Optional, Any, List
+from dataclasses import dataclass
 import requests
 
 
@@ -24,7 +24,7 @@ class ValidationError(SqlexplainerAPIClientError):
 class SqlexplainerAPIClient:
     # Validation rules for parameters (generated from schema)
     VALIDATION_RULES = {
-        "query": {"type": "string", "required": True},
+        "query": {"type": "string", "required": True, "maxLength": 50000},
         "detail": {"type": "string", "required": False, "default": "brief"}
     }
 
